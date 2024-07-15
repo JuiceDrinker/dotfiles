@@ -39,4 +39,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Open Oil on startup, unless opening specific file
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = vim.schedule_wrap(function(data)
+    if data.file == '' or vim.fn.isdirectory(data.file) ~= 0 then
+      require('oil').open()
+    end
+  end),
+})
+
 -- vim: ts=2 sts=2 sw=2 et
