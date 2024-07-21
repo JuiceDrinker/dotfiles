@@ -57,4 +57,6 @@ vim.opt.scrolloff = 10
 -- Disable netrw
 vim.g.loaded_netrwPlugin = 0
 
+-- Use whitespace (instead of ~) for showing end of buffer lines
+vim.opt.fillchars = { eob = ' ' }
 -- vim: ts=2 sts=2 sw=2 et
