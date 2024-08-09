@@ -49,11 +49,18 @@ return {
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
+        defaults = {
+          -- Default configuration for telescope goes here:
+          -- config_key = value,
+          mappings = {
+            n = {
+              ['<c-d>'] = require('telescope.actions').delete_buffer,
+            },
+            i = {
+              ['<c-d>'] = require('telescope.actions').delete_buffer,
+            },
+          },
+        },
         -- pickers = {}
         extensions = {
           ['ui-select'] = {
@@ -84,11 +91,13 @@ return {
         }
       end, { desc = 'Buffers' })
 
-      vim.keymap.set('n', '<leader>d', function()
+      -- NOTE: Fix this at some point
+      vim.keymap.set('n', '<leader><S-d>', function()
         builtin.diagnostics {
           bufnr = 0,
         }
       end, { desc = 'Diagnostics' })
+
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
       vim.keymap.set('n', '<leader>s/', function()
