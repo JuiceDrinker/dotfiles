@@ -59,4 +59,7 @@ vim.g.loaded_netrwPlugin = 0
 
 -- Use whitespace (instead of ~) for showing end of buffer lines
 vim.opt.fillchars = { eob = ' ' }
+
+-- Disable swap files
+vim.opt.swapfile = false
 -- vim: ts=2 sts=2 sw=2 et
