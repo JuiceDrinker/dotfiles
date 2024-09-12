@@ -10,8 +10,6 @@ export CPPFLAGS="-I/opt/homebrew/opt/postgresql@16/include"
 # Autosuggestions
 # source ~/.config/zshrc/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Setup Zoxide, must be under Autosuggestions
-eval "$(zoxide init zsh)"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -116,8 +114,30 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 alias cat="bat"
+alias mass="gt m -a && gt ss"
 
+# Setup Zoxide, must be under Autosuggestions
+eval "$(zoxide init zsh)"
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
 eval "$(direnv hook zsh)"
 eval "$(direnv hook zsh)"
+
+# fnm
+FNM_PATH="/Users/adi/Library/Application Support/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/Users/adi/Library/Application Support/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+eval "$(fnm env --use-on-cd --shell zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/adi/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/adi/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/adi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/adi/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
