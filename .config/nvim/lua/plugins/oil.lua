@@ -4,5 +4,9 @@ return {
   keymaps = {
     ['<C-n>'] = 'actions.cd',
   },
-  opts = {},
+  opts = {
+    view_options = {
+      show_hidden = true,
+    },
+  },
 }
