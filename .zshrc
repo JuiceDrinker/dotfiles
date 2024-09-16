@@ -114,7 +114,10 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 alias cat="bat"
+
+# Graphite
 alias mass="gt m -a && gt ss"
+alias cadd="gt add -A && gt c"
 
 # Setup Zoxide, must be under Autosuggestions
 eval "$(zoxide init zsh)"
