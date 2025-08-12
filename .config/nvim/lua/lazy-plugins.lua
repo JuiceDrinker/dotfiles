@@ -21,9 +21,6 @@
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
-  'tpope/vim-fugitive', -- tpope the Vim Goat - Git
-
-  'tpope/vim-dadbod', -- tpope the Vim Goat - DB
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
@@ -53,6 +50,8 @@ require('lazy').setup({
   require 'plugins/autopairs',
 
   require 'plugins/oil',
+
+  require 'plugins.snacks',
 
   require 'plugins/typescript',
 

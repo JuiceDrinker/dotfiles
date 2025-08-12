@@ -6,7 +6,7 @@ return {
       vim.cmd.colorscheme 'flow'
     end,
     config = function()
-      require('flow').setup_options {
+      require('flow').setup {
         transparent = true,
         mode = 'light',
       }
