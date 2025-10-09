@@ -24,6 +24,7 @@ return {
         javascriptreact = { 'prettier' },
         json = { 'fixjson' },
         sql = { 'sqlfmt' },
+        graphql = { 'prettier' },
       },
     },
   },

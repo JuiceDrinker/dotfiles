@@ -126,6 +126,9 @@ export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 eval "$(direnv hook zsh)"
 eval "$(direnv hook zsh)"
 
+# Source env.local
+[ -f ~/.dotfiles/.env.local ] && source ~/.dotfiles/.env.local
+
 # fnm
 FNM_PATH="/Users/adi/Library/Application Support/fnm"
 if [ -d "$FNM_PATH" ]; then
@@ -144,3 +147,11 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+
+# pnpm
+export PNPM_HOME="/Users/adi/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

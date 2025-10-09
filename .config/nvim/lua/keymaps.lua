@@ -27,6 +27,8 @@ vim.keymap.set('n', '<C-n>', '<Cmd>Oil<CR>', { desc = 'Open file tree' })
 vim.keymap.set('n', '<leader>/', 'gcc', { desc = 'comment toggle', remap = true })
 vim.keymap.set('v', '<leader>/', 'gc', { desc = 'comment toggle', remap = true })
 
+vim.keymap.set('n', '<leader>p', '"0p', { desc = 'paste from 0 register' })
+vim.keymap.set('x', '<leader>p', '"0p', { desc = 'paste from 0 register' })
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
