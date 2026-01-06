@@ -27,6 +27,19 @@ return {
           -- },
         },
       },
+      {
+        'echasnovski/mini.snippets',
+        version = false,
+        config = function()
+          local gen_loader = require('mini.snippets').gen_loader
+          require('mini.snippets').setup {
+            snippets = {
+              gen_loader.from_lang(), -- This includes those defined by friendly-snippets.
+            },
+          }
+        end,
+      },
+      'xzbdmw/cmp-mini-snippets',
       'saadparwaiz1/cmp_luasnip',
 
       -- Adds other completion capabilities.
@@ -88,6 +101,7 @@ return {
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },
         sources = {
+          { name = 'mini.snippets' },
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },

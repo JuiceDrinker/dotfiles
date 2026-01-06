@@ -28,6 +28,11 @@ return {
           env = {
             api_key = 'ANTHROPIC_API_KEY',
           },
+          schema = {
+            model = {
+              default = 'claude-sonnet-4-5-20250929',
+            },
+          },
         })
       end,
       openai = function()

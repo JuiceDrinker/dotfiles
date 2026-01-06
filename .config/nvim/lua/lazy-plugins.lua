@@ -27,42 +27,7 @@ require('lazy').setup({
     'MeanderingProgrammer/render-markdown.nvim',
     ft = { 'markdown', 'codecompanion' },
   },
-  -- modular approach: using `require 'path/name'` will
-  -- include a plugin definition from file lua/path/name.lua
-
-  require 'plugins.codecompanion',
-
-  require 'plugins/gitsigns',
-
-  require 'plugins/which-key',
-
-  require 'plugins/telescope',
-
-  require 'plugins/lspconfig',
-
-  require 'plugins/conform',
-
-  require 'plugins/cmp',
-
-  require 'plugins/theme',
-
-  require 'plugins/todo-comments',
-
-  require 'plugins/mini',
-
-  require 'plugins/treesitter',
-
-  require 'plugins/autopairs',
-
-  require 'plugins/oil',
-
-  require 'plugins.snacks',
-
-  require 'plugins/typescript',
-
-  require 'plugins/rust',
-
-  require 'plugins/vim-tmux-navigator',
+  { import = 'plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
