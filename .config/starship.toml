@@ -1,0 +1,86 @@
+# Flow Dark Theme for Starship
+# Matches your nvim/tmux/alacritty color scheme
+
+format = """
+[](fg:#75BDF0)\
+$username\
+[](bg:#1C2127 fg:#75BDF0)\
+$directory\
+[](fg:#1C2127 bg:#2A3138)\
+$git_branch\
+$git_status\
+[](fg:#2A3138 bg:#141A1F)\
+$nodejs\
+$rust\
+$python\
+$golang\
+[ ](fg:#141A1F)\
+$character"""
+
+[username]
+style_user = "bg:#75BDF0 fg:#0D0D0D bold"
+style_root = "bg:#FF007C fg:#0D0D0D bold"
+format = '[ $user ]($style)'
+disabled = false
+show_always = true
+
+[directory]
+style = "fg:#C8D0D7 bg:#1C2127"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#2A3138 fg:#75BDF0"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#2A3138 fg:#FFD080"
+format = '[$all_status$ahead_behind ]($style)'
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?${count}"
+stashed = "${count}"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "✘${count}"
+
+[nodejs]
+symbol = ""
+style = "bg:#141A1F fg:#7FD6A4"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#141A1F fg:#FF6B9D"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "bg:#141A1F fg:#FFD080"
+format = '[ $symbol ($version) ]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#141A1F fg:#5CCFE6"
+format = '[ $symbol ($version) ]($style)'
+
+[character]
+success_symbol = '[❯](bold fg:#7FD6A4)'
+error_symbol = '[❯](bold fg:#FF6B9D)'
+vimcmd_symbol = '[❮](bold fg:#75BDF0)'
+
+[cmd_duration]
+min_time = 500
+style = "fg:#FFD080"
+format = '[ took $duration ]($style)'

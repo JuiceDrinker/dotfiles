@@ -25,6 +25,7 @@ return {
         json = { 'fixjson' },
         sql = { 'sqlfmt' },
         graphql = { 'prettier' },
+        markdown = { 'prettier', 'markdownlint' },
       },
     },
   },

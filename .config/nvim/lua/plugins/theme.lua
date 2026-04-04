@@ -8,7 +8,7 @@ return {
     config = function()
       require('flow').setup {
         transparent = true,
-        mode = 'light',
+        mode = 'dark',
       }
     end,
   },

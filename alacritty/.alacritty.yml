@@ -552,6 +552,40 @@ schemes:
       cyan:    '#54ced6'
       white:   '#282a2e'
 
+  ### Flow Dark ###
+  FlowDark: &FlowDark
+    primary:
+      background: '#141A1F'
+      foreground: '#C8D0D7'
+
+    cursor:
+      text: '#141A1F'
+      cursor: '#75BDF0'
+
+    selection:
+      text: CellForeground
+      background: '#2A3138'
+
+    normal:
+      black:   '#1C2127'
+      red:     '#FF6B9D'
+      green:   '#7FD6A4'
+      yellow:  '#FFD080'
+      blue:    '#75BDF0'
+      magenta: '#FF007C'
+      cyan:    '#5CCFE6'
+      white:   '#C8D0D7'
+
+    bright:
+      black:   '#3D4F5C'
+      red:     '#FF87B3'
+      green:   '#A1E8BE'
+      yellow:  '#FFE0A6'
+      blue:    '#9DD3FF'
+      magenta: '#FF5CA3'
+      cyan:    '#7FE0F0'
+      white:   '#E6EDF3'
+
 ######################################################################
 ## SET THEME: Choose ONE color scheme from those in the above list. ##
 ## ###################################################################
@@ -566,8 +600,9 @@ schemes:
 # *SolarizedLight
 # *SolarizedDark
 # *TomorrowNight
+# *FlowDark
 
-colors: *DoomOne
+colors: *FlowDark
 
 # Visual Bell
 #
