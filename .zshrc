@@ -4,6 +4,10 @@
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="/Applications/WezTerm.app/Contents/MacOS:$PATH"
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
+  source "$HOME/google-cloud-sdk/path.zsh.inc"
+fi
 
 # ============================================================================
 # PostgreSQL
@@ -73,4 +77,10 @@ alias gr='git remote'
 alias gra='git remote add'
 alias grb='git rebase'
 alias gcl='git clone'
+alias gpsup='git push --set-upstream origin $(git_current_branch)'
 
+
+eval "$(fnm env --use-on-cd --version-file-strategy=recursive)"
+
+# add Pulumi to the PATH
+export PATH=$PATH:/Users/adi/.pulumi/bin
